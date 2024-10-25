@@ -1,0 +1,9 @@
+{
+  "include": ["src"],
+  "extends": "../../tsconfig.build.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "importHelpers": false,
+    "resolveJsonModule": true
+  }
+}

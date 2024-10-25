@@ -1,0 +1,33 @@
+{
+  "name": "@raneai/api",
+  "version": "0.0.0-alpha.1",
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "url": "https://github.com/raneai/rane",
+    "type": "git",
+    "directory": "apps/server"
+  },
+  "license": "Apache-2.0",
+  "scripts": {
+    "build": "tsup",
+    "with-env": "dotenv -e ../../.env --",
+    "dev": "bun run with-env tsx watch src/main.ts"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.13.2",
+    "hono": "^4.6.6",
+    "hono-pino": "^0.4.0",
+    "ioredis": "^5.4.1",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.17.12",
+    "dotenv-cli": "^7.4.2"
+  }
+}
