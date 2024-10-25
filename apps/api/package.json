@@ -1,13 +1,10 @@
 {
   "name": "@raneai/api",
   "version": "0.0.0-alpha.1",
-  "files": [
-    "dist"
-  ],
   "repository": {
     "url": "https://github.com/raneai/rane",
     "type": "git",
-    "directory": "apps/server"
+    "directory": "apps/api"
   },
   "license": "Apache-2.0",
   "scripts": {

@@ -1,3 +1,4 @@
+import { createCache, legacyLogicalPropertiesTransformer, StyleProvider } from "@ant-design/cssinjs";
 import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "@remix-run/react";
 
 export function Layout({ children }: { children: React.ReactNode }) {
@@ -19,5 +20,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  return <Outlet />;
+  const cache = createCache();
+  return (
+    <StyleProvider transformers={[legacyLogicalPropertiesTransformer]} cache={cache}>
+      <Outlet />
+    </StyleProvider>
+  );
 }
