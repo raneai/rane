@@ -54,7 +54,10 @@ export function setExcludeFolder(opts: {
     const excludeContent = `<excludeFolder url='file://$MODULE_DIR$/${dirName}/${opts.pkg}/${folder}' />`;
     const replaceMatcher = `<content url="file://$MODULE_DIR$">`;
     if (!content.includes(excludeContent)) {
-      content = content.replace(replaceMatcher, `${replaceMatcher}\n      ${excludeContent}`);
+      content = content.replace(
+        replaceMatcher,
+        `${replaceMatcher}\n      ${excludeContent}`,
+      );
     }
   }
   writeFileSync(configPath, content, "utf-8");

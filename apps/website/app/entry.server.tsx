@@ -19,8 +19,18 @@ export default function handleRequest(
   const prohibitOutOfOrderStreaming = isBot || remixContext.isSpaMode;
 
   return prohibitOutOfOrderStreaming
-    ? handleBotRequest(request, responseStatusCode, responseHeaders, remixContext)
-    : handleBrowserRequest(request, responseStatusCode, responseHeaders, remixContext);
+    ? handleBotRequest(
+        request,
+        responseStatusCode,
+        responseHeaders,
+        remixContext,
+      )
+    : handleBrowserRequest(
+        request,
+        responseStatusCode,
+        responseHeaders,
+        remixContext,
+      );
 }
 
 // We have some Remix apps in the wild already running with isbot@3 so we need
@@ -53,7 +63,11 @@ function handleBotRequest(
   return new Promise((resolve, reject) => {
     let shellRendered = false;
     const { pipe, abort } = renderToPipeableStream(
-      <RemixServer context={remixContext} url={request.url} abortDelay={ABORT_DELAY} />,
+      <RemixServer
+        context={remixContext}
+        url={request.url}
+        abortDelay={ABORT_DELAY}
+      />,
       {
         onAllReady() {
           shellRendered = true;
@@ -99,7 +113,11 @@ function handleBrowserRequest(
   return new Promise((resolve, reject) => {
     let shellRendered = false;
     const { pipe, abort } = renderToPipeableStream(
-      <RemixServer context={remixContext} url={request.url} abortDelay={ABORT_DELAY} />,
+      <RemixServer
+        context={remixContext}
+        url={request.url}
+        abortDelay={ABORT_DELAY}
+      />,
       {
         onShellReady() {
           shellRendered = true;

@@ -1,5 +1,16 @@
-import { createCache, legacyLogicalPropertiesTransformer, StyleProvider } from "@ant-design/cssinjs";
-import { Links, Meta, Outlet, Scripts, ScrollRestoration, useLoaderData } from "@remix-run/react";
+import {
+  createCache,
+  legacyLogicalPropertiesTransformer,
+  StyleProvider,
+} from "@ant-design/cssinjs";
+import {
+  Links,
+  Meta,
+  Outlet,
+  Scripts,
+  ScrollRestoration,
+  useLoaderData,
+} from "@remix-run/react";
 import { LoaderFunctionArgs } from "@remix-run/server-runtime";
 import { version } from "../package.json";
 
@@ -33,7 +44,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
 export default function App() {
   const cache = createCache();
   return (
-    <StyleProvider transformers={[legacyLogicalPropertiesTransformer]} cache={cache}>
+    <StyleProvider
+      transformers={[legacyLogicalPropertiesTransformer]}
+      cache={cache}
+    >
       <Outlet />
     </StyleProvider>
   );

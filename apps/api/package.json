@@ -10,11 +10,11 @@
   "scripts": {
     "build": "tsup",
     "with-env": "dotenv -e ../../.env --",
+    "clean": "rm -rf .turbo node_modules",
     "dev": "bun run with-env tsx watch src/main.ts"
   },
   "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org"
+    "access": "public"
   },
   "dependencies": {
     "@hono/node-server": "^1.13.2",

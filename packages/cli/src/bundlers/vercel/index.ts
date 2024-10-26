@@ -41,7 +41,9 @@ export default async function vercel(opts: BuildOptions) {
     static: path.join(outputPath, "static"),
   };
 
-  const targetPath = vercel ? path.join(dirs.functions, "_serverless.func") : output;
+  const targetPath = vercel
+    ? path.join(dirs.functions, "_serverless.func")
+    : output;
   fs.ensureDirSync(targetPath);
 
   // check static dir
@@ -77,10 +79,14 @@ export default async function vercel(opts: BuildOptions) {
     encoding: "utf-8",
   });
 
-  fs.writeJsonSync(path.join(targetPath, ".vc-config.json"), vcConfig[opts.edge ? "edge" : "node"], {
-    spaces: 2,
-    encoding: "utf-8",
-  });
+  fs.writeJsonSync(
+    path.join(targetPath, ".vc-config.json"),
+    vcConfig[opts.edge ? "edge" : "node"],
+    {
+      spaces: 2,
+      encoding: "utf-8",
+    },
+  );
   configJson.routes.unshift({ handle: "filesystem" });
   fs.writeJsonSync(path.join(outputPath, "config.json"), configJson, {
     spaces: 2,

@@ -4,17 +4,18 @@
   "description": "Rane AI CLI",
   "type": "module",
   "bin": {
-    "raneai": "dist/node/cli.js"
+    "raneai": "bin/raneai"
   },
   "files": ["dist"],
   "scripts": {
     "dev": "tsup --watch",
+    "clean": "rm -rf .turbo node_modules",
     "build": "tsup"
   },
   "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org"
+    "access": "public"
   },
+  "author": "Zack Liu <zack@rane.ai>",
   "repository": {
     "url": "https://github.com/raneai/rane",
     "type": "git",
