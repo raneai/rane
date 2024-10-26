@@ -14,10 +14,7 @@ const argv = process.argv.slice(2);
 const [name = "", ...throughArgs] = argv;
 const scriptsPath = join(__dirname, `../${name}.ts`);
 
-assert(
-  existsSync(scriptsPath) && !name.startsWith("."),
-  `Executed script '${chalk.red(name)}' does not exist`,
-);
+assert(existsSync(scriptsPath) && !name.startsWith("."), `Executed script '${chalk.red(name)}' does not exist`);
 
 console.log(chalk.cyan(`raneai-scripts: ${name}\n`));
 

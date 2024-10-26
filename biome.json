@@ -70,7 +70,7 @@
     "attributePosition": "auto",
     "indentStyle": "space",
     "lineEnding": "lf",
-    "lineWidth": 100
+    "lineWidth": 120
   },
   "javascript": {
     "parser": {

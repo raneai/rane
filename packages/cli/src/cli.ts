@@ -1,9 +1,10 @@
 import { cac } from "cac";
 import path from "node:path";
-import { version } from "../../package.json";
+import { version } from "../package.json";
 import { build, BuildOptions } from "./build";
+import { name } from "./consts";
 
-const cli = cac("raneai").version(version).help();
+const cli = cac(name).version(version).help();
 const isVercel = process.env.VERCEL === "1";
 
 cli

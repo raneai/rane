@@ -10,7 +10,7 @@
     "cac": "^6.7.14",
     "chalk": "^5.3.0",
     "cross-spawn": "^7.0.3",
-    "zx": "^8.1.9"
+    "tsx": "^4.19.1"
   },
   "devDependencies": {
     "@types/cross-spawn": "^6.0.6"
